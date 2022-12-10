@@ -11,15 +11,14 @@
 
 .footer {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
+    flex-basis: calc(100% / 3);
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    flex-basis: calc(100% / 3);
-    flex-direction: column;
     
-
     &__text {
         display: flex;
         flex-direction: column;
@@ -44,7 +43,6 @@
         opacity: 0.5;
         align-self: center;
 
-
             &:hover {
                 opacity: 1;
             }
@@ -53,13 +51,12 @@
 
     @media screen and (min-width: 495px) {
 
-        gap: 50px;
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 50px;
         justify-content: center;
 
         &__icons {
-
             justify-content: center;
         }
 
@@ -67,7 +64,6 @@
 
 	@media screen and (min-width: 960px) {
         &__icons {
-
             justify-content: flex-end;
         }
 

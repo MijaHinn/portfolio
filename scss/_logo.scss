@@ -6,6 +6,11 @@
     margin: 0;
     padding: 0;
 
+    &__link {
+        color: colors.$text-color;
+        text-decoration: none;
+    }
+
     &__h {
         color: #E6B200;
     }

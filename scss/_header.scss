@@ -1,16 +1,12 @@
 @use "colors";
-
-.header-container {
-    background-color: colors.$sec-bg;
-}
+@use "logo";
 
 .header {
     display: flex;
-    max-width: 1200px;
+    width: 100%;
+    background-color: colors.$sec-bg;
     padding: 20px 20px;
-    margin: 0 auto;
     justify-content: space-between;
-    align-items: center;
 
     .logo {
         align-self: flex-start;
@@ -20,29 +16,16 @@
         position: relative;
         order: -1;
 
-        &__checkbox {
-          position: absolute;  
-          left: -9999px;
-        }
-
-        &__toggler {
-            cursor: pointer;
-        }
-
-        &__mobileButton {
-            position: relative;
-            z-index: 3;    
-        }
-
         &__list {
             position: absolute;
             display: none;
-            padding: 0;
-            margin-top: -63px;
             background-color: colors.$primary-c;
-            border-radius: 0 15px;
+            padding: 0;
+            margin-top: -20px;
+            margin-left: -20px;
 
             height: 100vh;
+            width: 100vw;
             list-style: none;
             text-align: center;
             z-index: 2; 
@@ -55,12 +38,33 @@
         &__link {
             display: inline-block;
             font-size: 14px;
-            color: #292929;   
-            margin: 10px 10px;
-            padding: 0 5px;   
-            text-decoration: none;
+            color: colors.$dark-text-color;  
+            text-decoration: none; 
+            margin: 20px 0;
+        }
+
+        &__checkbox {
+            position: absolute;  
+            left: -9999px;
+        }
+  
+        &__toggler {
+            position: absolute;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            color: transparent;
+            height: 100%;
+            background-image: url(/images/mobile_menu.svg);
+            background-position: 0 85%;
+            background-size: 80%;
+            top: 5px;
         }
     } 
+
+    .menu__checkbox:checked ~ .menu__toggler {
+        background-image: url(/images/mobile_menu_close.svg);
+        z-index: 3;
+    }
 
     .menu__checkbox:checked ~ .menu__list {
         display: block;
@@ -75,6 +79,7 @@
         color: colors.$dark-button-text-color;
         background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);
         border-radius: 30px;
+        box-shadow: 1px 1px 10px black;
 
         &__icon::after {
             position: absolute;
@@ -87,13 +92,11 @@
             left: 80px;
         }
     }
-    
 
     @media screen and (min-width: 495px) {
-      
         display: flex;
         flex-direction: column;
-
+       
         &__checkbox {
             display: none;
         }
@@ -101,75 +104,81 @@
         .logo {
             align-self: center;
             padding-bottom: 30px;
+ 
+            &__link {
+                text-decoration: none;            
+            }
         }
 
         .menu {
-            order: 0;    
-
+            order: 0;
+ 
             &__list {
-                position: relative;
+                position: inherit;
                 display: inline-block;
-                height: 0;
-                margin-top: 0;
-                padding-right: 20px;
-                background-color: transparent;
-            }
-
+                height: auto;
+                margin: 0;
+                background-color: transparent;  
+           }
+ 
             &__items {
                 margin: 0;
             }
-
+ 
             &__item {
                 display: inline-block;
-                border-bottom: none; /* ??? */
             }
-
+ 
             &__link {
                 display: block;
                 position: relative;
-                color: #b6b6b6; 
-                margin: 10px 5px;  
+                color: #b6b6b6;
+                margin: 10px 15px;  
             }
-
-            &__mobileButton {
+ 
+            &__toggler {
                 display: none;
             }
         }
-
+ 
         .buttonContact {
             display: inline-block;
-            /*background-color: colors.$button-main-color;*/
             background-image: linear-gradient(to right, colors.$button-main-color, colors.$button-sec-color);
-            color: colors.$button-text-main-color;   
-            font-weight: 800; 
+            color: colors.$button-text-main-color;  
+            font-weight: 800;
             margin: 0;
-
+            margin-left: 30px;
+ 
             &__icon::after {
                 background-image: url(../images/contact.svg);
             }
-
         }
 	}
 
 	@media screen and (min-width: 960px) {
-
         flex-direction: row;
-
+ 
         .logo {
             padding-bottom: 0;
+            padding-left: 20px;
         }
-
-        .menu {    
-        
+ 
+        .menu {  
+            
+            &__list {
+                width: auto;
+            }
+ 
             &__link {
                 font-size: 14px;
                 position: relative;
+                margin: 20px 10px;
             }
 
             &__item {
                 padding-right: 20px;
             }
-
+ 
             &__link--underline::after {
                 content: '';
                 position: absolute;
@@ -179,31 +188,31 @@
                 bottom: -5px;
                 left: 0;
                 transition: 0.4s;
+                
             }
-
+ 
             &__link--underline:hover {
                 color: #ffffff;
             }
-
+ 
             &__link--underline:hover:after {
                 width: 100%;
             }
-
+ 
             &__github {
                 color: colors.$primary-c;
             }
-
+ 
             &__github:hover {
                 color: #ffc918;
             }
-        } 
-        
+        }
+
         .buttonContact {
-            margin-left: 70px; 
-            margin-right: 20px;
+            margin-left: 70px;
             box-shadow: inset 0 0 0 0 colors.$button-sec-color;
             transition: box-shadow 0.5s ease-in-out 0s;
-
+ 
             &:hover {
                 box-shadow: inset 150px 0 0 0 colors.$text-color;
             }
