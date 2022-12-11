@@ -97,6 +97,7 @@
     }
 
     @media screen and (min-width: 960px) {
-        
+        padding-top: 20px;
+        border-left: 4px solid colors.$primary-c;
     }
 }
