@@ -32,9 +32,9 @@
 
     &__intro {
         letter-spacing: .1rem;
-        border-left: 2px solid colors.$primary-c;
-        border-right: 2px solid colors.$primary-c;
-        padding: 5px 10px 5px 10px; 
+        border-left: 1px solid colors.$primary-c;
+        border-right: 1px solid colors.$primary-c;
+        padding: 5px 25px 5px 25px; 
         line-height: 2;
         text-align: center;
 
@@ -60,7 +60,7 @@
         }
 
         &--small-text {
-            font-size: 10px;
+            font-size: 12px;
             letter-spacing: .1rem;
         }
     }

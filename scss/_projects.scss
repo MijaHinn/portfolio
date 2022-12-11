@@ -1,0 +1,108 @@
+@use "root";
+@use "colors";
+
+.projects-container {
+    background-image: linear-gradient(colors.$sec-bg, colors.$sec-bg, #131313);
+}
+
+.projects {
+    padding: 20px;
+    height: 90vh;
+    margin: 0 auto;
+    line-height: 1.5;
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 30px 0 60px 0;
+        color: colors.$text-color;
+        letter-spacing: .2rem;
+    }
+
+    &__box {
+        background-color: colors.$main-bg;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid colors.$primary-c;
+    }
+
+    &__subtitle {
+        color: colors.$primary-c;
+        font-size: 20px;
+        margin: 0;
+        text-align: center;
+        padding-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+    }
+
+    &__img {
+        width: 75%;
+    }
+
+    &__text {
+        margin-top: 30px;
+        font-size: 15px;
+        text-align: justify;
+        color: colors.$text-color;
+    }
+
+    @media screen and (min-width: 495px) {
+
+        padding: 20px 40px 20px 40px;
+
+        &__box {
+            padding: 40px;
+        }
+        
+        &__text {
+            font-size: 20px;
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        max-width: 1000px;
+
+        &__box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 20% 1fr 1fr;
+            gap: 20px 80px;
+        }
+
+        &__subtitle {
+            grid-column-end: span 2;
+        }
+
+        &__text {
+            margin-top: 0;
+            font-size: 16px;
+            &--first {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+    
+            &--second {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+        }
+
+        .stred {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            align-self: baseline;
+        }
+
+        &__img {
+            width: 100%;
+        }
+    }
+}
