@@ -20,6 +20,7 @@
             position: absolute;
             display: none;
             background-color: colors.$primary-c;
+            filter: brightness(80%);
             padding: 0;
             margin-top: -20px;
             margin-left: -20px;
@@ -70,7 +71,7 @@
         display: block;
     }
 
-    .buttonContact {
+    .button-contact {
         position: relative;
         display: inline-block;
         margin-top: 70px;
@@ -141,7 +142,7 @@
             }
         }
  
-        .buttonContact {
+        .button-contact {
             display: inline-block;
             background-image: linear-gradient(to right, colors.$button-main-color, colors.$button-sec-color);
             color: colors.$button-text-main-color;  
@@ -208,7 +209,7 @@
             }
         }
 
-        .buttonContact {
+        .button-contact {
             margin-left: 70px;
             box-shadow: inset 0 0 0 0 colors.$button-sec-color;
             transition: box-shadow 0.5s ease-in-out 0s;

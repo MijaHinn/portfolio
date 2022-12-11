@@ -2,3 +2,34 @@
 layout: layouts/template.njk
 title: Kontakt
 ---
+
+<div class="contact-container">
+
+    <div class="contact">
+        <h2 class="contact__title">Kontaktujte mě</h2>
+
+            <form class="form" action="" method="post">
+                <div class="form__field">
+                    <label class="form__label" for="name">Jméno a příjmení</label>
+                    <input class="form__input" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="email">E-mail</label>
+                    <input class="form__input" type="text" id="email" name="email" value="@" required>
+                </div>
+
+                <div class="form__field">
+                    <label class="form__label" for="name">Text zprávy</label>
+                    <textarea class="form__input form__textarea" type="text" id="message" name="message" cols="20" rows="8"></textarea>
+                </div>
+
+                <button class="form__btn" type="submit" id="send" name="send">Odeslat</button>
+            </form>
+
+            <img class="contact__img" src="/images/contact_img.png" alt="">
+            
+        
+    </div>
+
+</div>

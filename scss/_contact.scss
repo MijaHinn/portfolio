@@ -1,0 +1,101 @@
+@use "colors";
+
+.contact-container {
+    background-image: linear-gradient(colors.$sec-bg, colors.$sec-bg, #131313);
+}
+
+.contact {
+    margin: 0 auto;
+    padding: 20px;
+    height: 90vh;
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 30px 0 60px 0;
+        color: colors.$text-color;
+    }
+
+    &__img {
+        display: none;
+    }
+    
+
+    @media screen and (min-width: 495px) {
+        
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-rows: 15% 450px;
+        padding-left: 50px;
+        padding-right: 50px;
+        column-gap: 20px;
+        
+        &__title {
+            grid-column-end: span 2;
+        }
+        
+        &__img {
+            display: block;
+            width: 100%;
+            justify-self:flex-end;
+            margin-top: -60px;
+            padding-left: 20px;
+        }
+
+    }
+
+    @media screen and (min-width: 960px) {
+        max-width: 1200px;
+        column-gap: 70px;
+        grid-template-rows: 25% 450px;
+    }
+}
+
+.form {
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        justify-content: space-between;
+    }
+
+    &__label {
+        color: colors.$primary-c;
+        opacity: 80%;
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 20px 0 5px 0;
+    }
+
+    &__input {
+        background-color: #dbdbdb;
+        border-radius: 5px;
+        height: 30px;
+        opacity: 90%;
+    }
+
+    &__textarea {
+        height: auto;
+    }
+
+    &__btn {
+        margin: 60px auto;
+        border-radius: 30px;
+        padding: 10px 30px;
+        color: colors.$dark-button-text-color;
+        text-transform: uppercase;
+        font-size: 12px;
+        display: block;
+        background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);
+    }
+
+    @media screen and (min-width: 495px) {
+        padding-left: 50px;
+    }
+
+    @media screen and (min-width: 960px) {
+        
+    }
+}

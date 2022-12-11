@@ -2,31 +2,21 @@
 @use "colors";
 
 .hero-container {
-    background-image: linear-gradient(colors.$sec-bg, colors.$main-bg);
+    background-image: linear-gradient(colors.$sec-bg, #131313);
 }
 
 .hero {
     margin: 0 auto;
-    /*max-width: 1200px;*/
-    /*height: 100vh;*/
-    /*display: grid;
-    grid-template-columns: repeat(4, 250px);
-    grid-template-rows: repeat(6, 100px);*/
     display: flex;
-    /*flex-basis: calc(100% / 2);*/
     flex-direction: column;
-    /*justify-content: flex-start;*/
-
-    /*position: relative;*/
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 40px 20px;
     z-index: 1; 
-
 
     &__title {
         font-size: 4vw;
         /*font-size: 7vw;*/
-        margin-bottom: 80px;
-        letter-spacing: .6rem;
+        margin-bottom: 50px;
+        letter-spacing: .3rem;
         line-height: 3;
         text-align: center;
         font-weight: 200;
@@ -35,33 +25,27 @@
             display: block;
             font-size: 9vw;
             text-transform: uppercase;
-            transform: scale(1.1 , 2.5);
-            color: colors.$primary-c;
-
-            /*font-size: 7vw;*/
-           /* letter-spacing: .5rem;*/
-         
+            transform: scale(1.1 , 1.5);
+            color: colors.$primary-c;  
         }
     }
 
     &__intro {
-        /*letter-spacing: .1rem;*/
-        letter-spacing: .4rem;
-        border-left: 4px solid colors.$primary-c;
-        border-right: 4px solid colors.$primary-c;
+        letter-spacing: .1rem;
+        border-left: 2px solid colors.$primary-c;
+        border-right: 2px solid colors.$primary-c;
         padding: 5px 10px 5px 10px; 
         line-height: 2;
         text-align: center;
 
-        &--middleText {
+        &--middle-text {
             font-size: 16px; 
         }
 
-        &--personName {
+        &--person-name {
             text-transform: uppercase;
             color: colors.$primary-c;
-            /*font-size: 20px;*/
-            font-size: 5vw;
+            font-size: 6vw;
             font-weight: 600;
             letter-spacing: .2rem;
         }
@@ -70,80 +54,59 @@
             text-transform: uppercase;
             color: colors.$primary-c;
             font-weight: 200;
-            font-size: 25px;
-            /*margin: 30px 0;*/
+            font-size: 20px;
             margin: 0;
             margin: 40px 0 ;
-
         }
 
-        &--smallText {
+        &--small-text {
             font-size: 10px;
-            letter-spacing: .2rem;
+            letter-spacing: .1rem;
         }
-
     }
 
     &__img {
         display: none;
-       /* max-width: 50%;
-        max-height: 50%;
-
-        align-self: center;
-        position: absolute;
-        left: 50%;
-        top: 15%;*/
     }
 
     @media screen and (min-width: 495px) {
         
-        /*flex-direction: row;
-        justify-content: space-between;*/
         padding: 50px 20px 20px 20px;    
         display: flex;
         flex-direction: column;
 
         &__title {
             line-height: 2;
-            /*font-size: 40px;*/
-            /*font-size: 1vw;*/
             margin-bottom: 0;
             font-size: 3vw;
-            /*padding-left: 130px;*/
-
-            
+            letter-spacing: .5rem;
 
             &--bigger {
                 display: inline;
                 transform: scale(1.1 , 2.5);
-                color: colors.$primary-c;
-    
-                /*font-size: 7vw;*/
-               /* letter-spacing: .5rem;*/
-             
+                color: colors.$primary-c;         
             }
         }
 
         &__intro {
             order: 1;
     
-            &--middleText {
+            &--middle-text {
                 font-size: 20px;
                 margin-right: 0;
             }
     
-            &--smallText {
+            &--small-text {
                 font-size: 14px;
             }
     
-            &--personName {
-                font-size: 24px;
+            &--person-name {
+                font-size: 30px;
             }
     
             &--job {
-                font-size: 35px;
+                font-size: 30px;
             }
-    
         }
 
         &__img {
@@ -157,41 +120,28 @@
 
 	@media screen and (min-width: 960px) {
 
-        height: 100vh;
-        /*flex-direction: row;*/
+        height: 90vh;
         max-width: 1200px;
-        height:auto;
         display: grid;
         grid-template-columns: 1.5fr 1fr;
-        /*grid-template-columns: 800px 400px;*/
-        /*grid-template-rows: 0.73fr 1fr;*/
         padding: 50px 20px 50px 20px; 
-
 
         &__title {
             text-align: left;
-            /*font-size: 35px;*/
             line-height: 1.5;
             font-size: 20px;
             padding: 20px 0 100px 100px;
 
-
             &--bigger {
-                /*font-size: 5.5vw;*/
                 font-size: 75px;
                 transform: scale(.8 , 2.2);
                 color: colors.$primary-c;
-                padding-left: 50px;
-    
-                /*font-size: 7vw;*/
-               /* letter-spacing: .5rem;*/
-             
+                padding-left: 50px;   
             }
         }
 
         &__intro {
             border-right: none;
-            
             text-align: left;
             padding-left: 50px;
         }
@@ -201,16 +151,11 @@
             max-width: 100%;
             max-height: 100%;
             align-self: flex-start;
-           /* padding: 100px 20px 0 0;*/
             grid-row-end: span 3;
-            /*align-self: center;*/
             margin-top: 60px;
             padding-top: 30px;
             padding-right: 50px;
             border-right: 4px solid colors.$primary-c;
         }
-
-        
-        
     }
 }
