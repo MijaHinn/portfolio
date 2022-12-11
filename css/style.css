@@ -245,7 +245,7 @@ body {
 .hero__title {
   font-size: 4vw;
   /*font-size: 7vw;*/
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   letter-spacing: 0.3rem;
   line-height: 3;
   text-align: center;
@@ -389,7 +389,9 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin: 0;
-  padding: 30px 0;
+  padding: 100px 0 30px 0;
+  color: #cfcfcf;
+  letter-spacing: 0.2rem;
 }
 .technology-container {
   background-color: #EEEEEE;
