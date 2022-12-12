@@ -149,11 +149,9 @@
 
 	@media screen and (min-width: 960px) {
 
-        height: 90vh;
         max-width: 1200px;
         display: grid;
         grid-template-columns: 1.5fr 1fr;
-
 
         &__title {
             text-align: left;
