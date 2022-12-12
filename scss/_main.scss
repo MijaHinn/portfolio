@@ -9,18 +9,19 @@
 
 .about {
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 40px;
     max-width: 1200px;
     height: 580px;
-    line-height: 1.5;
+    line-height: 1.75;
     color: colors.$dark-text-color;
+    height: auto;
     
 
     &__title {
         text-align: center;
         text-transform: uppercase;
         margin: 0;
-        padding: 100px 0 30px 0;
+        padding: 60px 0 30px 0;
         letter-spacing: .2rem;
     }
 
@@ -53,7 +54,7 @@
         text-align: center;
         text-transform: uppercase;
         margin: 0;
-        padding: 30px 0 50px 0;
+        padding: 60px 0 50px 0;
         letter-spacing: .1rem;
 
     }

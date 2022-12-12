@@ -294,8 +294,8 @@ body {
 }
 .hero__intro {
   letter-spacing: 0.1rem;
-  border-left: 1px solid #E6B200;
-  border-right: 1px solid #E6B200;
+  /*border-left: 1px solid colors.$primary-c;
+  border-right: 1px solid colors.$primary-c;*/
   padding: 5px 25px 5px 25px;
   line-height: 2;
   text-align: center;
@@ -412,17 +412,18 @@ body {
 
 .about {
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 40px;
   max-width: 1200px;
   height: 580px;
-  line-height: 1.5;
+  line-height: 1.75;
   color: #292929;
+  height: auto;
 }
 .about__title {
   text-align: center;
   text-transform: uppercase;
   margin: 0;
-  padding: 100px 0 30px 0;
+  padding: 60px 0 30px 0;
   letter-spacing: 0.2rem;
 }
 .about__content {
@@ -442,7 +443,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin: 0;
-  padding: 30px 0 50px 0;
+  padding: 60px 0 50px 0;
   letter-spacing: 0.1rem;
 }
 .technology__content, .technology__list, .technology__tools {
