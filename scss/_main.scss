@@ -87,7 +87,7 @@
                 content: '';
                 position: absolute;
                 background-color: colors.$primary-c;
-                width: 300px;
+                width: 90%;
                 height: 2px;
                 left: 0;
                 right: 0;
@@ -172,7 +172,7 @@
             font-size: 25px;
 
             &::after {
-                width: 450px;
+                width: 95%;
                 bottom: 10px;
             }
         }
@@ -220,7 +220,6 @@
             padding-bottom: 30px;
 
             &::after {
-                width: 650px;
                 bottom: 15px;
             }
         }

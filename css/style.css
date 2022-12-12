@@ -497,7 +497,7 @@ body {
   content: "";
   position: absolute;
   background-color: #E6B200;
-  width: 300px;
+  width: 90%;
   height: 2px;
   left: 0;
   right: 0;
@@ -572,7 +572,7 @@ body {
     font-size: 25px;
   }
   .technology__content-title::after {
-    width: 450px;
+    width: 95%;
     bottom: 10px;
   }
   .technology__content-text {
@@ -611,7 +611,6 @@ body {
     padding-bottom: 30px;
   }
   .technology__content-title::after {
-    width: 650px;
     bottom: 15px;
   }
   .technology__item {
