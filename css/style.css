@@ -793,6 +793,10 @@ body {
   text-transform: uppercase;
   margin: 0;*/
   padding: 50px 0 30px 0;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.2rem;
   color: #cfcfcf;
   /*letter-spacing: .2rem;*/
 }
