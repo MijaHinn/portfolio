@@ -1,5 +1,6 @@
 @use "root";
 @use "colors";
+@use "mixins";
 
 .hero-container {
     background-image: linear-gradient(colors.$sec-bg, #131313);
@@ -9,12 +10,11 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px 40px 20px;
     z-index: 1; 
-
+    padding: 10px 20px 40px 20px;
+    
     &__title {
         font-size: 4vw;
-        /*font-size: 7vw;*/
         margin-bottom: 70px;
         letter-spacing: .3rem;
         line-height: 3;
@@ -23,13 +23,12 @@
         
         &--bigger {
             display: block;
+            position: relative;
             font-size: 9vw;
             text-transform: uppercase;
-            /*transform: scale(1.1 , 1.5);*/
             color: colors.$primary-c;  
             font-weight: 800;
-            position: relative;
-
+            
             &::after {
                 content: '';
                 position: absolute;
@@ -58,9 +57,9 @@
 
     &__intro {
         letter-spacing: .1rem;
-        padding: 5px 25px 5px 25px; 
         line-height: 2;
         text-align: center;
+        padding: 5px 25px 5px 25px; 
 
         &--middle-text {
             font-size: 16px; 
@@ -94,11 +93,11 @@
         display: none;
     }
 
-    @media screen and (min-width: 495px) {
-        
-        padding: 50px 20px 40px 20px;    
+    @include mixins.tablet {
+           
         display: flex;
         flex-direction: column;
+        padding: 50px 20px 40px 20px; 
 
         &__title {
             line-height: 1.5;
@@ -147,7 +146,7 @@
         }
 	}
 
-	@media screen and (min-width: 960px) {
+	@include mixins.pc {
 
         max-width: 1200px;
         display: grid;
@@ -170,8 +169,8 @@
         &__intro {
             border-right: none;
             text-align: left;
-            padding-left: 50px;
             border-left: 4px solid colors.$primary-c;
+            padding-left: 50px;
         }
 
         &__img {
@@ -180,10 +179,10 @@
             max-height: 100%;
             align-self: flex-start;
             grid-row-end: span 3;
+            border-right: 4px solid colors.$primary-c;
             margin-top: 60px;
             padding-top: 30px;
             padding-right: 50px;
-            border-right: 4px solid colors.$primary-c;
         }
     }
 }

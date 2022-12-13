@@ -1,29 +1,23 @@
 @use "root";
 @use "colors";
+@use "mixins";
 
 
 .about-container {
-    /*background-image: linear-gradient( #131313, colors.$sec-bg, colors.$main-bg);*/
     background-color: colors.$primary-c;
 }
 
 .about {
-    margin: 0 auto;
-    padding: 30px 30px 40px 30px;
     max-width: 1200px;
-    height: 580px;
+    height: auto;
     line-height: 1.5;
     color: colors.$dark-text-color;
-    height: auto;
+    margin: 0 auto;
+    padding: 30px 30px 40px 30px;
     
-
     &__title {
-        text-align: center;
-        text-transform: uppercase;
-        margin: 0;
+        @include mixins.main-title;
         padding: 50px 0 30px 0;
-        padding-bottom: 30px;
-        letter-spacing: .2rem;
     }
 
     &__content {
@@ -32,19 +26,18 @@
     }
 
     &__kurzy {
-        padding: 10px 20px;
         border-radius: 15px;
         font-weight: 600;
         text-align: center;
         opacity: 90%;
+        padding: 10px 20px;
     }
 
-    @media screen and (min-width: 495px) {
-
+    @include mixins.tablet {
 
     }
 
-    @media screen and (min-width: 960px) {
+    @include mixins.pc {
 
     }
 }
@@ -60,12 +53,8 @@
     padding: 30px 30px 40px 30px;
 
     &__title {
-        text-align: center;
-        text-transform: uppercase;
-        margin: 0;
+        @include mixins.main-title;
         padding: 50px 0 30px 0;
-        letter-spacing: .1rem;
-
     }
 
     &__content, &__list,  &__tools {
@@ -75,13 +64,12 @@
     }
 
     &__content-title {
+        position: relative;
         text-align: center;
-        margin: 0;
-        margin: 16px 0;
-        padding: 20px 20px 20px 20px;
         color: colors.$primary-c;
         font-size: 20px;
-        position: relative;
+        margin: 16px 0;
+        padding: 20px 20px 20px 20px;
 
             &::after {
                 content: '';
@@ -105,24 +93,22 @@
 
     &__list {
         list-style: none;
-        padding: 0;
         text-align: center;
         padding: 10px 0;
     }
 
     &__item {
         display: inline-block;
-        padding: 5px 10px 5px 10px;
-        background-color: colors.$primary-c;
         border-radius: 30px;
-        margin: 5px;
+        background-color: colors.$primary-c;
         font-size: 13px;
         color: #ffffff;
-        font-weight: 600;   
+        font-weight: 600; 
+        margin: 5px;
+        padding: 5px 10px 5px 10px;  
     }
 
     &__tools {
-        padding: 20px 20px 10px 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -130,18 +116,19 @@
         row-gap: 20px;
         font-weight: 600;
         margin-bottom: 25px;
+        padding: 20px 20px 10px 20px;
     }
 
     &__tool {
-        font-size: 13px;
-        align-self: center;
         display: flex;
         flex-direction: column;
+        font-size: 13px;
+        align-self: center;
     }
 
     &__tool-icon {
-        align-self: center;
         width: 75%;
+        align-self: center;
     }
 
     &__tool-desc {
@@ -149,7 +136,7 @@
         text-align: center;
     }
 
-    @media screen and (min-width: 495px) {
+    @include mixins.tablet {
         
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -183,11 +170,11 @@
 
         &__list {
             display: flex;
-            margin: 0;
             flex-direction: column;
             grid-row-start: 2;
             grid-column-start: 3;
             grid-column-end: 3;
+            margin: 0;
         }
 
         &__item {
@@ -198,15 +185,13 @@
             grid-row-start: 3;
             grid-column-end: span 3;
         }
-
     }
 
-    @media screen and (min-width: 960px) {
+    @include mixins.pc {
 
         max-width: 1200px;
         column-gap: 50px;
         row-gap: 60px;
-
 
         &__title {
             padding-bottom: 0;

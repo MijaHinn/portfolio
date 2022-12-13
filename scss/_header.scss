@@ -1,13 +1,14 @@
 @use "colors";
 @use "logo";
+@use "mixins";
 
 .header {
-    display: flex;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     background-color: colors.$sec-bg;
     padding: 20px 20px;
-    justify-content: space-between;
-
+    
     .logo {
         align-self: flex-start;
     }
@@ -17,19 +18,18 @@
         order: -1;
 
         &__list {
+            height: 100vh;
+            width: 100vw;
+            list-style: none;
+            text-align: center;
+            z-index: 2; 
             position: absolute;
             display: none;
             background-color: colors.$primary-c;
             /*filter: brightness(80%);*/ /* <-- Snížení jasu menu na telefonu */
             padding: 0;
             margin-top: -20px;
-            margin-left: -20px;
-
-            height: 100vh;
-            width: 100vw;
-            list-style: none;
-            text-align: center;
-            z-index: 2; 
+            margin-left: -20px; 
         }
 
         &__items {
@@ -50,11 +50,11 @@
         }
   
         &__toggler {
+            height: 100%;
             position: absolute;
             background-repeat: no-repeat;
             cursor: pointer;
             color: transparent;
-            height: 100%;
             background-image: url(/images/mobile_menu.svg);
             background-position: 0 85%;
             background-size: 80%;
@@ -74,13 +74,13 @@
     .button-contact {
         position: relative;
         display: inline-block;
-        margin-top: 70px;
-        padding: 8px 38px 8px 15px;
-        font-weight: 600;  
-        color: colors.$dark-button-text-color;
         background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);
         border-radius: 30px;
         box-shadow: 1px 1px 10px black;
+        font-weight: 600;  
+        color: colors.$dark-button-text-color;
+        margin-top: 70px;
+        padding: 8px 38px 8px 15px;
 
         &__icon::after {
             position: absolute;
@@ -94,7 +94,7 @@
         }
     }
 
-    @media screen and (min-width: 495px) {
+    @include mixins.tablet {
         display: flex;
         flex-direction: column;
        
@@ -174,7 +174,7 @@
         }
 	}
 
-	@media screen and (min-width: 960px) {
+	@include mixins.pc {
         flex-direction: row;
  
         .logo {
@@ -221,7 +221,6 @@
                     bottom: -5px;
                     left: 0;
                 }
-
             }
 
             &__link--underline:hover {
@@ -242,9 +241,9 @@
         }
 
         .button-contact {
-            margin-left: 70px;
             box-shadow: inset 0 0 0 0 colors.$button-sec-color;
             transition: box-shadow 0.5s ease-in-out 0s;
+            margin-left: 70px;
  
             &:hover {
                 box-shadow: inset 150px 0 0 0 colors.$text-color;

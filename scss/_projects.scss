@@ -7,36 +7,27 @@
 }
 
 .projects {
+    line-height: 1.5;
     margin: 0 auto;
-    line-height: 1.75;
     padding: 30px 30px 75px 30px;
 
     &__title {
-        /*text-align: center;
-        text-transform: uppercase;
-        margin: 0;*/
-        padding: 50px 0 30px 0;
-        @include mixins.title;
+        @include mixins.main-title;
         color: colors.$text-color;
-        /*letter-spacing: .2rem;*/
+        padding: 50px 0 30px 0;
     }
 
     &__box {
         background-color: colors.$main-bg;
-        padding: 20px;
         border-radius: 15px;
         border: 1px solid colors.$primary-c;
         margin: 16px 0;
+        padding: 20px;
     }
 
     &__subtitle {
-        color: colors.$primary-c;
-        font-size: 20px;
-        margin: 0;
-        text-align: center;
+        @include mixins.subtitle;
         padding-bottom: 30px;
-        text-transform: uppercase;
-        letter-spacing: .2rem;
     }
 
     &__img {
@@ -44,14 +35,13 @@
     }
 
     &__text {
-        margin-top: 30px;
         font-size: 15px;
-        line-height: 1.5;
         text-align: justify;
         color: colors.$text-color;
+        margin-top: 30px;
     }
 
-    @media screen and (min-width: 495px) {
+    @include mixins.tablet {
 
         &__box {
             padding: 40px;
@@ -62,7 +52,7 @@
         }
     }
 
-    @media screen and (min-width: 960px) {
+    @include mixins.pc {
         max-width: 1000px;
 
         &__box {
