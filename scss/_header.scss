@@ -8,246 +8,251 @@
     justify-content: space-between;
     background-color: colors.$sec-bg;
     padding: 20px 20px;
-    
+}
+
+.logo {
+    align-self: flex-start;
+}
+
+.menu {
+    position: relative;
+    order: -1;
+
+    &__list {
+        height: 100vh;
+        width: 100vw;
+        list-style: none;
+        text-align: center;
+        z-index: 2; 
+        position: absolute;
+        display: none;
+        background-color: colors.$primary-c;
+        /*filter: brightness(80%);*/ /* <-- Snížení jasu menu na telefonu */
+        padding: 0;
+        margin-top: -20px;
+        margin-left: -20px; 
+    }
+
+    &__items {
+        margin-top: 100px;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 14px;
+        color: colors.$dark-text-color;  
+        text-decoration: none; 
+        margin: 20px 0;
+    }
+
+    &__checkbox {
+        position: absolute;  
+        left: -9999px;
+    }
+
+    &__toggler {
+        height: 100%;
+        position: absolute;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        color: transparent;
+        background-image: url(/images/mobile_menu.svg);
+        background-position: 0 85%;
+        background-size: 80%;
+        top: 5px;
+    }
+} 
+
+.menu__checkbox:checked ~ .menu__toggler {
+    background-image: url(/images/mobile_menu_close.svg);
+    z-index: 3;
+}
+
+.menu__checkbox:checked ~ .menu__list {
+    display: block;
+}
+
+.button-contact {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px black;
+    font-weight: 600;  
+    color: colors.$dark-button-text-color;
+    margin-top: 70px;
+    padding: 8px 38px 8px 15px;
+
+    &__icon::after {
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 18px;
+        background-image: url(../images/contact_y.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 80px;
+    }
+}
+
+@include mixins.tablet {
+
+    .header {
+        flex-direction: column;
+    }   
+
     .logo {
-        align-self: flex-start;
+        align-self: center;
+        padding-bottom: 30px;
+
+        &__link {
+            text-decoration: none;            
+        }
     }
 
     .menu {
-        position: relative;
-        order: -1;
+        order: 0;
 
         &__list {
-            height: 100vh;
-            width: 100vw;
-            list-style: none;
-            text-align: center;
-            z-index: 2; 
-            position: absolute;
+            position: inherit;
+            display: inline-block;
+            height: auto;
+            margin: 0;
+            background-color: transparent;  
+        }
+
+        &__checkbox {
             display: none;
-            background-color: colors.$primary-c;
-            /*filter: brightness(80%);*/ /* <-- Snížení jasu menu na telefonu */
-            padding: 0;
-            margin-top: -20px;
-            margin-left: -20px; 
         }
 
         &__items {
-            margin-top: 100px;
+            margin: 0;
         }
-    
+
+        &__item {
+            display: inline-block;     
+        }
+
         &__link {
-            display: inline-block;
-            font-size: 14px;
-            color: colors.$dark-text-color;  
-            text-decoration: none; 
-            margin: 20px 0;
+            display: block;
+            position: relative;
+            color: #b6b6b6;
+            margin: 10px 15px;  
+
+            &--active {
+                color: #ffffff;
+            }
+
+            &--active::after {
+                content: '';
+                position: absolute;
+                background-color: colors.$primary-c;
+                width: 100%;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+            }
         }
 
-        &__checkbox {
-            position: absolute;  
-            left: -9999px;
+        &__github {
+            color: colors.$primary-c;
         }
-  
+
         &__toggler {
-            height: 100%;
-            position: absolute;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            color: transparent;
-            background-image: url(/images/mobile_menu.svg);
-            background-position: 0 85%;
-            background-size: 80%;
-            top: 5px;
+            display: none;
         }
-    } 
+    }
+    
+    .button-contact {
+        display: inline-block;
+        background-image: linear-gradient(to right, colors.$button-main-color, colors.$button-sec-color);
+        color: colors.$button-text-main-color;  
+        font-weight: 800;
+        margin: 0;
+        margin-left: 30px;
 
-    .menu__checkbox:checked ~ .menu__toggler {
-        background-image: url(/images/mobile_menu_close.svg);
-        z-index: 3;
+        &__icon::after {
+            background-image: url(../images/contact.svg);
+        }
+    }
+}
+
+@include mixins.pc   {
+    
+    .header {
+        flex-direction: row;
     }
 
-    .menu__checkbox:checked ~ .menu__list {
-        display: block;
+    .logo {
+        padding-bottom: 0;
+        padding-left: 20px;
+    }
+ 
+    .menu {  
+        
+        &__list {
+            width: auto;
+        }
+
+        &__item {
+            padding-right: 20px;
+        }
+
+        &__link {
+            font-size: 14px;
+            position: relative;
+            margin: 20px 10px;
+
+            &--underline::after {
+                content: '';
+                position: absolute;
+                background-color: colors.$primary-c;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                transition: 0.4s;
+            }
+
+            &--active {
+                color: #ffffff;
+            }
+
+            &--active::after {
+                content: '';
+                position: absolute;
+                background-color: colors.$primary-c;
+                width: 100%;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+            }
+        }
+
+        &__link--underline:hover {
+            color: #ffffff;
+        }
+
+        &__link--underline:hover:after {
+            width: 100%;
+        }
+
+        &__github {
+            color: colors.$primary-c;
+        }
+
+        &__github:hover, &__github:focus {
+            color: #ffc918;
+        }
     }
 
     .button-contact {
-        position: relative;
-        display: inline-block;
-        background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);
-        border-radius: 30px;
-        box-shadow: 1px 1px 10px black;
-        font-weight: 600;  
-        color: colors.$dark-button-text-color;
-        margin-top: 70px;
-        padding: 8px 38px 8px 15px;
+        box-shadow: inset 0 0 0 0 colors.$button-sec-color;
+        transition: box-shadow 0.5s ease-in-out 0s;
+        margin-left: 70px;
 
-        &__icon::after {
-            position: absolute;
-            content: '';
-            width: 18px;
-            height: 18px;
-            background-image: url(../images/contact_y.svg);
-            background-repeat: no-repeat;
-            background-size: contain;
-            left: 80px;
+        &:hover, &:focus {
+            box-shadow: inset 150px 0 0 0 colors.$text-color;
         }
-    }
-
-    @include mixins.tablet {
-        display: flex;
-        flex-direction: column;
-       
-        &__checkbox {
-            display: none;
-        }
-
-        .logo {
-            align-self: center;
-            padding-bottom: 30px;
- 
-            &__link {
-                text-decoration: none;            
-            }
-        }
-
-        .menu {
-            order: 0;
- 
-            &__list {
-                position: inherit;
-                display: inline-block;
-                height: auto;
-                margin: 0;
-                background-color: transparent;  
-           }
- 
-            &__items {
-                margin: 0;
-            }
- 
-            &__item {
-                display: inline-block;     
-            }
- 
-            &__link {
-                display: block;
-                position: relative;
-                color: #b6b6b6;
-                margin: 10px 15px;  
-
-                &--active {
-                    color: #ffffff;
-                }
-
-                &--active::after {
-                    content: '';
-                    position: absolute;
-                    background-color: colors.$primary-c;
-                    width: 100%;
-                    height: 2px;
-                    bottom: -5px;
-                    left: 0;
-                }
-            }
-
-            &__github {
-                color: colors.$primary-c;
-            }
- 
-            &__toggler {
-                display: none;
-            }
-        }
- 
-        .button-contact {
-            display: inline-block;
-            background-image: linear-gradient(to right, colors.$button-main-color, colors.$button-sec-color);
-            color: colors.$button-text-main-color;  
-            font-weight: 800;
-            margin: 0;
-            margin-left: 30px;
- 
-            &__icon::after {
-                background-image: url(../images/contact.svg);
-            }
-        }
-	}
-
-	@include mixins.pc   {
-        flex-direction: row;
- 
-        .logo {
-            padding-bottom: 0;
-            padding-left: 20px;
-        }
- 
-        .menu {  
-            
-            &__list {
-                width: auto;
-            }
-
-            &__item {
-                padding-right: 20px;
-            }
- 
-            &__link {
-                font-size: 14px;
-                position: relative;
-                margin: 20px 10px;
-
-                &--underline::after {
-                    content: '';
-                    position: absolute;
-                    background-color: colors.$primary-c;
-                    width: 0;
-                    height: 2px;
-                    bottom: -5px;
-                    left: 0;
-                    transition: 0.4s;
-                }
-
-                &--active {
-                    color: #ffffff;
-                }
-
-                &--active::after {
-                    content: '';
-                    position: absolute;
-                    background-color: colors.$primary-c;
-                    width: 100%;
-                    height: 2px;
-                    bottom: -5px;
-                    left: 0;
-                }
-            }
-
-            &__link--underline:hover {
-                color: #ffffff;
-            }
- 
-            &__link--underline:hover:after {
-                width: 100%;
-            }
- 
-            &__github {
-                color: colors.$primary-c;
-            }
- 
-            &__github:hover, &__github:focus {
-                color: #ffc918;
-            }
-        }
-
-        .button-contact {
-            box-shadow: inset 0 0 0 0 colors.$button-sec-color;
-            transition: box-shadow 0.5s ease-in-out 0s;
-            margin-left: 70px;
- 
-            &:hover, &:focus {
-                box-shadow: inset 150px 0 0 0 colors.$text-color;
-            }
-        }  
-    }
+    }  
 }

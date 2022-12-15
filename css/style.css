@@ -55,14 +55,16 @@ body {
   background-color: #191919;
   padding: 20px 20px;
 }
-.header .logo {
+
+.logo {
   align-self: flex-start;
 }
-.header .menu {
+
+.menu {
   position: relative;
   order: -1;
 }
-.header .menu__list {
+.menu__list {
   height: 100vh;
   width: 100vw;
   list-style: none;
@@ -76,21 +78,21 @@ body {
   margin-top: -20px;
   margin-left: -20px;
 }
-.header .menu__items {
+.menu__items {
   margin-top: 100px;
 }
-.header .menu__link {
+.menu__link {
   display: inline-block;
   font-size: 14px;
   color: #292929;
   text-decoration: none;
   margin: 20px 0;
 }
-.header .menu__checkbox {
+.menu__checkbox {
   position: absolute;
   left: -9999px;
 }
-.header .menu__toggler {
+.menu__toggler {
   height: 100%;
   position: absolute;
   background-repeat: no-repeat;
@@ -101,14 +103,17 @@ body {
   background-size: 80%;
   top: 5px;
 }
-.header .menu__checkbox:checked ~ .menu__toggler {
+
+.menu__checkbox:checked ~ .menu__toggler {
   background-image: url(/images/mobile_menu_close.svg);
   z-index: 3;
 }
-.header .menu__checkbox:checked ~ .menu__list {
+
+.menu__checkbox:checked ~ .menu__list {
   display: block;
 }
-.header .button-contact {
+
+.button-contact {
   position: relative;
   display: inline-block;
   background-image: linear-gradient(to right, #191919, #292929);
@@ -119,7 +124,7 @@ body {
   margin-top: 70px;
   padding: 8px 38px 8px 15px;
 }
-.header .button-contact__icon::after {
+.button-contact__icon::after {
   position: absolute;
   content: "";
   width: 18px;
@@ -129,47 +134,47 @@ body {
   background-size: contain;
   left: 80px;
 }
+
 @media screen and (min-width: 495px) {
   .header {
-    display: flex;
     flex-direction: column;
   }
-  .header__checkbox {
-    display: none;
-  }
-  .header .logo {
+  .logo {
     align-self: center;
     padding-bottom: 30px;
   }
-  .header .logo__link {
+  .logo__link {
     text-decoration: none;
   }
-  .header .menu {
+  .menu {
     order: 0;
   }
-  .header .menu__list {
+  .menu__list {
     position: inherit;
     display: inline-block;
     height: auto;
     margin: 0;
     background-color: transparent;
   }
-  .header .menu__items {
+  .menu__checkbox {
+    display: none;
+  }
+  .menu__items {
     margin: 0;
   }
-  .header .menu__item {
+  .menu__item {
     display: inline-block;
   }
-  .header .menu__link {
+  .menu__link {
     display: block;
     position: relative;
     color: #b6b6b6;
     margin: 10px 15px;
   }
-  .header .menu__link--active {
+  .menu__link--active {
     color: #ffffff;
   }
-  .header .menu__link--active::after {
+  .menu__link--active::after {
     content: "";
     position: absolute;
     background-color: #E6B200;
@@ -178,13 +183,13 @@ body {
     bottom: -5px;
     left: 0;
   }
-  .header .menu__github {
+  .menu__github {
     color: #E6B200;
   }
-  .header .menu__toggler {
+  .menu__toggler {
     display: none;
   }
-  .header .button-contact {
+  .button-contact {
     display: inline-block;
     background-image: linear-gradient(to right, #E6B200, #F6E11F);
     color: #292929;
@@ -192,7 +197,7 @@ body {
     margin: 0;
     margin-left: 30px;
   }
-  .header .button-contact__icon::after {
+  .button-contact__icon::after {
     background-image: url(../images/contact.svg);
   }
 }
@@ -200,22 +205,22 @@ body {
   .header {
     flex-direction: row;
   }
-  .header .logo {
+  .logo {
     padding-bottom: 0;
     padding-left: 20px;
   }
-  .header .menu__list {
+  .menu__list {
     width: auto;
   }
-  .header .menu__item {
+  .menu__item {
     padding-right: 20px;
   }
-  .header .menu__link {
+  .menu__link {
     font-size: 14px;
     position: relative;
     margin: 20px 10px;
   }
-  .header .menu__link--underline::after {
+  .menu__link--underline::after {
     content: "";
     position: absolute;
     background-color: #E6B200;
@@ -225,10 +230,10 @@ body {
     left: 0;
     transition: 0.4s;
   }
-  .header .menu__link--active {
+  .menu__link--active {
     color: #ffffff;
   }
-  .header .menu__link--active::after {
+  .menu__link--active::after {
     content: "";
     position: absolute;
     background-color: #E6B200;
@@ -237,28 +242,27 @@ body {
     bottom: -5px;
     left: 0;
   }
-  .header .menu__link--underline:hover {
+  .menu__link--underline:hover {
     color: #ffffff;
   }
-  .header .menu__link--underline:hover:after {
+  .menu__link--underline:hover:after {
     width: 100%;
   }
-  .header .menu__github {
+  .menu__github {
     color: #E6B200;
   }
-  .header .menu__github:hover, .header .menu__github:focus {
+  .menu__github:hover, .menu__github:focus {
     color: #ffc918;
   }
-  .header .button-contact {
+  .button-contact {
     box-shadow: inset 0 0 0 0 #F6E11F;
     transition: box-shadow 0.5s ease-in-out 0s;
     margin-left: 70px;
   }
-  .header .button-contact:hover, .header .button-contact:focus {
+  .button-contact:hover, .button-contact:focus {
     box-shadow: inset 150px 0 0 0 #cfcfcf;
   }
 }
-
 .hero-container {
   background-image: linear-gradient(#191919, #131313);
 }
