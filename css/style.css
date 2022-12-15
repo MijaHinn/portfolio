@@ -246,7 +246,7 @@ body {
   .header .menu__github {
     color: #E6B200;
   }
-  .header .menu__github:hover {
+  .header .menu__github:hover, .header .menu__github:focus {
     color: #ffc918;
   }
   .header .button-contact {
@@ -254,7 +254,7 @@ body {
     transition: box-shadow 0.5s ease-in-out 0s;
     margin-left: 70px;
   }
-  .header .button-contact:hover {
+  .header .button-contact:hover, .header .button-contact:focus {
     box-shadow: inset 150px 0 0 0 #cfcfcf;
   }
 }
@@ -641,7 +641,7 @@ body {
   align-self: center;
   opacity: 0.5;
 }
-.footer__buttons:hover {
+.footer__buttons:hover, .footer__buttons:focus {
   opacity: 1;
 }
 @media screen and (min-width: 495px) {
@@ -745,13 +745,17 @@ body {
 }
 .form__btn {
   display: block;
-  background-image: linear-gradient(to right, #191919, #292929);
+  /*background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);*/
+  background-color: #292929;
   border-radius: 30px;
   font-size: 12px;
   color: #E6B200;
   text-transform: uppercase;
+  box-shadow: 2px 2px 5px black;
   margin: 60px auto;
   padding: 10px 30px;
+  font-weight: 600;
+  border: none;
 }
 @media screen and (min-width: 495px) {
   .form {
@@ -762,6 +766,10 @@ body {
   .form {
     border-left: 4px solid #E6B200;
     padding-top: 20px;
+  }
+  .form__btn:hover, .form__btn:focus {
+    background-image: linear-gradient(to right, #E6B200, #F6E11F);
+    color: #292929;
   }
 }
 

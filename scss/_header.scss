@@ -174,7 +174,7 @@
         }
 	}
 
-	@include mixins.pc {
+	@include mixins.pc   {
         flex-direction: row;
  
         .logo {
@@ -235,7 +235,7 @@
                 color: colors.$primary-c;
             }
  
-            &__github:hover {
+            &__github:hover, &__github:focus {
                 color: #ffc918;
             }
         }
@@ -245,7 +245,7 @@
             transition: box-shadow 0.5s ease-in-out 0s;
             margin-left: 70px;
  
-            &:hover {
+            &:hover, &:focus {
                 box-shadow: inset 150px 0 0 0 colors.$text-color;
             }
         }  

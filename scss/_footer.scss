@@ -43,7 +43,7 @@
         align-self: center;
         opacity: 0.5;
 
-            &:hover {
+            &:hover, &:focus {
                 opacity: 1;
             }
         }
