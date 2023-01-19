@@ -29,6 +29,40 @@ body {
   text-align: center;
 }
 
+.dark-lines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (min-width: 495px) {
+  .dark-lines::before, .dark-lines::after {
+    content: "";
+    border-top: 2px solid;
+    color: #292929;
+    flex: 0 0 100px;
+    opacity: 0.7;
+    margin: 0 30px 0 30px;
+  }
+}
+
+.light-lines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (min-width: 495px) {
+  .light-lines::before, .light-lines::after {
+    content: "";
+    border-top: 2px solid;
+    color: #cfcfcf;
+    flex: 0 0 100px;
+    opacity: 0.7;
+    margin: 0 30px 0 30px;
+  }
+}
+
 .logo {
   color: #cfcfcf;
   font-size: 36px;
@@ -170,21 +204,19 @@ body {
     position: relative;
     color: #b6b6b6;
     margin: 10px 15px;
+    transition: 0.4s;
   }
   .menu__link--active {
-    color: #ffffff;
+    color: #ffc918;
   }
   .menu__link--active::after {
     content: "";
     position: absolute;
-    background-color: #E6B200;
-    width: 100%;
+    background-color: #9e9e9e;
+    width: 125%;
     height: 2px;
-    bottom: -5px;
-    left: 0;
-  }
-  .menu__github {
-    color: #E6B200;
+    bottom: -8px;
+    left: -10%;
   }
   .menu__toggler {
     display: none;
@@ -213,11 +245,10 @@ body {
     width: auto;
   }
   .menu__item {
-    padding-right: 20px;
+    padding-right: 25px;
   }
   .menu__link {
     font-size: 14px;
-    position: relative;
     margin: 20px 10px;
   }
   .menu__link--underline::after {
@@ -226,33 +257,24 @@ body {
     background-color: #E6B200;
     width: 0;
     height: 2px;
-    bottom: -5px;
-    left: 0;
+    bottom: -8px;
+    left: -10%;
     transition: 0.4s;
-  }
-  .menu__link--active {
-    color: #ffffff;
   }
   .menu__link--active::after {
     content: "";
     position: absolute;
-    background-color: #E6B200;
-    width: 100%;
+    background-color: #9e9e9e;
+    width: 125%;
     height: 2px;
-    bottom: -5px;
-    left: 0;
+    bottom: -8px;
+    left: -10%;
   }
   .menu__link--underline:hover {
     color: #ffffff;
   }
   .menu__link--underline:hover:after {
-    width: 100%;
-  }
-  .menu__github {
-    color: #E6B200;
-  }
-  .menu__github:hover, .menu__github:focus {
-    color: #ffc918;
+    width: 125%;
   }
   .button-contact {
     box-shadow: inset 0 0 0 0 #F6E11F;
