@@ -43,6 +43,7 @@
         color: colors.$dark-text-color;  
         text-decoration: none; 
         margin: 20px 0;
+        font-weight: 600;
     }
 
     &__checkbox {
@@ -76,8 +77,9 @@
     position: relative;
     display: inline-block;
     background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);
-    border-radius: 30px;
-    box-shadow: 1px 1px 10px black;
+    /*border-radius: 30px;*/
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px black;
     font-weight: 600;  
     color: colors.$dark-button-text-color;
     margin-top: 70px;
@@ -142,17 +144,7 @@
 
             &--active {
                 color: #ffc918; 
-            }
-
-            &--active::after {
-                content: '';
-                position: absolute;
-                background-color: #9e9e9e;
-                width: 125%;
-                height: 2px;
-                bottom: -8px;
-                left: -10%;
-            }
+            }     
         }
 
         &__toggler {
@@ -185,7 +177,6 @@
         padding-left: 20px;
     }
  
-    
     .menu {  
         
         &__list {
@@ -204,31 +195,31 @@
                 content: '';
                 position: absolute;
                 background-color: colors.$primary-c;
-                width: 0;
-                height: 2px;
-                bottom: -8px;
-                left: -10%;
-                transition: 0.4s;
-            }
-            
-            &--active::after {
-                content: '';
-                position: absolute;
-                background-color: #9e9e9e;
                 width: 125%;
                 height: 2px;
                 bottom: -8px;
                 left: -10%;
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform 0.4s ease-out;
+            } 
+
+            &--underline:hover {
+                color: #ffffff;
+            }
+    
+            &--underline:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
             }
 
-        }
+            &--active::after {
+                width: 0%;
+            }
 
-        &__link--underline:hover {
-            color: #ffffff;
-        }
-
-        &__link--underline:hover:after {
-            width: 125%;
+            &--active:hover:not(.active) {
+                color: #ffc918; 
+            }
         }
     }
 
