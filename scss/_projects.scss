@@ -168,7 +168,7 @@
             margin: 15px 60px;
             transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
 
-            &:hover {
+            &:hover, &:focus {
                 color: colors.$dark-text-color;
                 box-shadow: 0 0 40px 40px colors.$primary-c inset;
             }

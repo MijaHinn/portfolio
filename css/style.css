@@ -220,7 +220,7 @@ body {
     color: #292929;
     font-weight: 800;
     margin: 0;
-    margin-left: 30px;
+    margin-left: 0;
   }
   .button-contact__icon::after {
     background-image: url(../images/contact.svg);
@@ -985,7 +985,7 @@ body {
     margin: 15px 60px;
     transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
   }
-  .projects__project-button:hover {
+  .projects__project-button:hover, .projects__project-button:focus {
     color: #292929;
     box-shadow: 0 0 40px 40px #E6B200 inset;
   }
