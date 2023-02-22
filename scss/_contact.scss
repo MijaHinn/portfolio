@@ -7,8 +7,7 @@
 
 .contact {
     margin: 0 auto;
-    height: 90vh;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px 225px 30px;
 
     &__title {
         @include mixins.main-title;
@@ -34,10 +33,9 @@
         
         &__img {
             display: block;
-            justify-self: flex-end;
             width: 100%;
-            margin-top: -60px;
             padding-left: 20px;
+            align-self: center;
         }
 
     }
@@ -70,7 +68,7 @@
         background-color: #dbdbdb;
         height: 30px;
         opacity: 90%;
-        border-radius: 5px;
+        border-radius: 2px;
     }
 
     &__textarea {
@@ -79,16 +77,13 @@
 
     &__btn {
         display: block;
-        /*background-image: linear-gradient(to right, colors.$dark-button-main-color, colors.$dark-button-sec-color);*/
-        background-color: colors.$dark-button-sec-color;
-        border-radius: 30px;
+        background-color: colors.$button-main-color;
+        border-radius: 2px;
         font-size: 12px;
-        color: colors.$dark-button-text-color;
         text-transform: uppercase;
-        box-shadow: 2px 2px 5px black;
         margin: 60px auto;
         padding: 10px 30px;   
-        font-weight: 600; 
+        font-weight: 700; 
         border: none;  
     }
 
@@ -101,10 +96,16 @@
         padding-top: 20px; 
 
         &__btn {
-           
+            background-color: #191919;
+            color: colors.$primary-c;
+            border: 1px solid colors.$primary-c;
+            transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+
             &:hover, &:focus {
-                background-image: linear-gradient(to right, colors.$button-main-color, colors.$button-sec-color);
-                color: colors.$button-text-main-color; 
+                /*background-image: linear-gradient(to right, colors.$button-main-color, colors.$button-sec-color);
+                color: colors.$button-text-main-color; */
+                color: colors.$dark-text-color;
+                box-shadow: 0 0 40px 40px colors.$primary-c inset;
             }
         }
     }
