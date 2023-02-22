@@ -20,8 +20,7 @@
 
     &__box {
         background-color: colors.$main-bg;
-        border-radius: 15px;
-        border: 1px solid colors.$primary-c;
+        border-radius: 2px;
         margin: 16px 0;
         padding: 20px;
     }
@@ -32,7 +31,8 @@
     }
 
     &__img {
-        width: 75%;
+        width: 100%;
+        border-radius: 2px;
     }
 
     &__text {
@@ -40,26 +40,82 @@
         text-align: justify;
         color: colors.$text-color;
         margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+
+    &__project-button {
+        display: block;
+        height: auto;
+        background-color: colors.$primary-c;
+        border-radius: 2px;
+        color: colors.$dark-text-color;
+        text-align: center;
+        text-decoration: none;
+        font-size: small;
+        font-weight: 600;
+        margin: 15px 0;
+        padding: 10px 10px;
     }
 
     @include mixins.tablet {
 
         &__box {
-            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows:  auto 1fr 65px 120px;
+            gap: 5px 50px;
+            align-items: start;
+            padding-left: 40px;
+            padding-right: 40px;
         }
-        
+
+        &__subtitle {
+            grid-column-end: span 2;
+            margin-top: 20px;
+        }
+
+        &__img {
+            /*grid-column: <start-line> / <end-line> | <start-line> / span <value>;*/
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            margin-top: 15px;
+        }
+
         &__text {
-            font-size: 20px;
+            font-size: 14px;
+            margin-top: 15px;
+
+            &--first {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+    
+            &--second {
+                grid-column: 2 / 3;
+                grid-row: 3 / 5;
+            }
         }
+
+        &__project-web {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+            height: auto;
+        }
+
+        &__project-gh {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+        }     
     }
 
     @include mixins.pc {
         max-width: 1000px;
 
         &__box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 20% 1fr 1fr;
+            grid-template-rows:  auto;
+            padding-left: 50px;
+            padding-right: 50px;
             gap: 20px 80px;
         }
 
@@ -67,35 +123,65 @@
             grid-column-end: span 2;
         }
 
+        &__img {
+            display: none;
+        }
+
+        &__scroll-img {
+            height: 270px;
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+            background-color: #362d2d;
+            background-position: top;
+            transition: ease-in-out 6s;
+            
+            &--img1 {
+                background-image: url("../images/portfolio_screen1.png");
+                background-size: cover;
+                border-radius: 2px;
+            }
+
+            &:hover {
+                background-position: bottom;
+            }
+        }
+
         &__text {
             margin-top: 0;
-            font-size: 16px;
+            font-size: 14px;
 
             &--first {
-                grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 2;
-                grid-row-end: 3;
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
             }
     
             &--second {
-                grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 3;
-                grid-row-end: 4;
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
             }
         }
 
-        .stred {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 2;
-            grid-row-end: 4;
-            align-self: baseline;
+        &__project-button {
+            background-color: colors.$dark-text-color;
+            color: colors.$primary-c;
+            border: 1px solid colors.$primary-c;
+            margin: 15px 60px;
+            transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+
+            &:hover {
+                color: colors.$dark-text-color;
+                box-shadow: 0 0 40px 40px colors.$primary-c inset;
+            }
         }
 
-        &__img {
-            width: 100%;
+        &__project-web {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
         }
+
+        &__project-gh {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;  
+        } 
     }
 }
