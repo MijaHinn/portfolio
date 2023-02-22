@@ -1028,13 +1028,6 @@ body {
   gap: 10px;
   padding: 20px 20px 25px 20px;
 }
-.gallery__img {
-  height: 200px;
-  width: 150px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  vertical-align: middle;
-}
 .gallery__subtitle {
   position: relative;
   color: #E6B200;
@@ -1057,11 +1050,16 @@ body {
   top: 110px;
   margin: 0 auto;
 }
+.gallery__img {
+  height: 200px;
+  width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  vertical-align: middle;
+}
 @media screen and (min-width: 520px) {
   .gallery__box {
     padding: 40px;
-  }
-  .gallery__box {
     height: auto;
   }
   .gallery__img {
@@ -1072,5 +1070,9 @@ body {
 @media screen and (min-width: 960px) {
   .gallery {
     max-width: 1200px;
+  }
+  .gallery__box {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -27,13 +27,6 @@
         padding: 20px 20px 25px 20px;
     }
 
-    &__img {
-        height: 200px;
-        width: 150px;
-        object-fit: contain;
-        vertical-align: middle;
-    }
-
     &__subtitle {
         position: relative;
         @include mixins.subtitle;
@@ -53,15 +46,19 @@
         }
     }
 
+    &__img {
+        height: 200px;
+        width: 150px;
+        object-fit: contain;
+        vertical-align: middle;
+    }
+
     @include mixins.tablet {
         &__box {
             padding:  40px;
-        }
-
-        &__box {
             height: auto;
         }
-    
+
         &__img {
             height: auto;
             width: 100%;
@@ -70,5 +67,10 @@
 
     @include mixins.pc {
         max-width: 1200px;
+
+        &__box {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
 }
