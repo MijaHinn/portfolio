@@ -9,17 +9,17 @@ $primary-c: #E6B200;
 
 /* --- TEXT COLORS -- */
 $text-color: #cfcfcf;
-$dark-text-color: #292929;
+$dark-text-color: $main-bg;
 /*$text-color: #b6b6b6;*/
 
 
 /* --- LIGHT BUTTON -- */
-$button-main-color: #E6B200;
+$button-main-color: $primary-c;
 $button-sec-color: #F6E11F;
-$button-text-main-color: #292929;
+$button-text-main-color: $main-bg;
 
 
 /* --- DARK BUTTON -- */
-$dark-button-main-color: #191919;
-$dark-button-sec-color: #292929;
-$dark-button-text-color: #E6B200;
+$dark-button-main-color: $sec-bg;
+$dark-button-sec-color: $main-bg;
+$dark-button-text-color: $primary-c;
