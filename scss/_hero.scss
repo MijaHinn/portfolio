@@ -27,9 +27,12 @@
     
     &__title {
         font-size: 4vw;
-        margin-bottom: 70px;
-        letter-spacing: .3rem;
-        line-height: 3;
+        margin-bottom: 80px;
+        /*letter-spacing: .3rem;*/
+        letter-spacing: .1rem;
+        /*line-height: 3;*/
+        line-height: 2;
+        padding-top: 40px;
         text-align: center;
         font-weight: 200;
         
@@ -37,6 +40,7 @@
             display: block;
             position: relative;
             font-size: 9vw;
+            letter-spacing: .3rem;
             text-transform: uppercase;
             color: colors.$primary-c;  
             font-weight: 800;
@@ -49,7 +53,7 @@
                 height: 2px;
                 left: 0;
                 right: 0;
-                bottom: 5px;
+                bottom: -15px;
                 margin: 0 auto;
             }
 
@@ -61,7 +65,7 @@
                 height: 2px;
                 left: 0;
                 right: 0;
-                bottom: -20px;
+                bottom: -40px;
                 margin: 0 auto;
             }
         }
@@ -70,7 +74,7 @@
     &__intro {
         letter-spacing: .1rem;
         line-height: 2;
-        text-align: center;
+       /* text-align: center;*/
         padding: 5px 25px 5px 25px; 
 
         &--middle-text {
@@ -80,7 +84,7 @@
         &--person-name {
             text-transform: uppercase;
             color: colors.$primary-c;
-            font-size: 6vw;
+            font-size: 7vw;
             font-weight: 600;
             letter-spacing: .2rem;
         }
@@ -88,14 +92,18 @@
         &--job {
             text-transform: uppercase;
             color: colors.$primary-c;
+            text-align: right;
             font-weight: 200;
             font-size: 20px;
             margin: 0;
-            margin: 40px 0 ;
+            margin: 40px 0;
+            border-right: 2px solid colors.$primary-c;
+            padding-right: 20px;
         }
 
         &--small-text {
             font-size: 12px;
+            text-align: justify;
             letter-spacing: .1rem;
             padding-bottom: 25px;
         }
@@ -130,10 +138,11 @@
 
         &__intro {
             order: 1;
-    
+            
             &--middle-text {
                 font-size: 20px;
                 margin-right: 0;
+                text-align: center;
             }
     
             &--small-text {
@@ -141,11 +150,15 @@
             }
     
             &--person-name {
-                font-size: 30px;
+                /*font-size: 35px;*/
+                font-size: 45px;
             }
     
             &--job {
-                font-size: 30px;
+                font-size: 25px;
+                border: none;
+                padding-right: 0;
+                text-align: center;
             }
         }
 
@@ -183,6 +196,19 @@
             text-align: left;
             border-left: 4px solid colors.$primary-c;
             padding-left: 50px;
+
+            &--middle-text {
+                text-align: left;
+            }
+
+            &--job {
+                text-align: left;
+                padding-top: 50px;
+            }
+
+            &--small-text {
+                padding-top: 70px;
+            }
         }
 
         &__img {

@@ -45,6 +45,10 @@
         align-self: center;
         width: 40px;
         opacity: 0.7;
+
+        &--up {
+            display: none;
+        }
     }
 
     @include mixins.tablet {
@@ -60,8 +64,11 @@
 	}
 
 	@include mixins.pc {
+        flex-basis: calc(100% / 4);
+        
         &__icons {
             justify-content: flex-end;
+            padding-right: 70px;
         }
 
         &__buttons {
@@ -70,6 +77,26 @@
     
             &:hover, &:focus {
                 opacity: 1;
+            }
+
+            &--up {
+                opacity: 0.5;
+                transition: 0.5s;
+                display: block;
+
+                &:hover, &:focus {
+                    opacity: 1;
+                    border-radius: 100%;
+                    position: relative;
+                    animation-name: up;
+                    animation-duration: 0.5s;  
+                    animation-fill-mode: forwards;
+                }
+                  
+                  @keyframes up {
+                    from {bottom: 0px;}
+                    to {bottom: 15px;}
+                }
             }
         }
     }
