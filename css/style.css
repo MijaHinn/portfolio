@@ -452,10 +452,11 @@ p {
   }
   .hero__intro--job {
     text-align: left;
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .hero__intro--small-text {
-    padding-top: 70px;
+    padding-top: 60px;
+    font-size: 15px;
   }
   .hero__img {
     display: block;
@@ -531,7 +532,7 @@ p {
     max-width: 100%;
     grid-column-start: 1;
     grid-row-end: span 2;
-    margin-top: 50px;
+    margin-top: 60px;
   }
   .about__text {
     text-align: justify;
@@ -540,7 +541,7 @@ p {
   .about__content {
     font-size: 16px;
     padding-left: 0;
-    padding-top: 0;
+    padding-top: 15px;
     padding-right: 0;
   }
 }
@@ -645,6 +646,7 @@ p {
   .technology {
     line-height: 1.75;
     display: grid;
+    grid-template-columns: 47% 46%;
     -moz-column-gap: 40px;
          column-gap: 40px;
     row-gap: 25px;
