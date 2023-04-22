@@ -7,30 +7,21 @@
 }
 
 .about {
-    max-width: 1200px;
-    height: auto;
-    line-height: 1.5;
+    @include mixins.main-sections;
     color: colors.$dark-text-color;
-    margin: 0 auto;
-    padding: 30px 30px 80px 30px;
     
     &__title {
         @include mixins.main-title;
-        padding: 50px 0 30px 0;
     }
 
     &__img {
-        max-width: 100%;
-        /*padding-bottom: 30px;*/
-        /*filter: grayscale(100%);*/
-        border-radius: 100%;
-        border: 7px solid #f6c41f;
-        opacity: 90%;
+        @include mixins.section-img;
+        margin: 25px 15px;
     }
 
     &__content {
-        font-size: 16px;
         text-align: justify;
+        padding-top: 15px;
     }
 
 
@@ -38,14 +29,19 @@
         &__img {
             display: block;
             max-width: 70%;
-            margin: auto;
-            /*padding-top: 20px;*/
+            margin: 40px auto 20px auto;
+        }
+
+        &__content {
+            font-size: 18px;
+            padding: 25px 15px 0 15px;
         }
     }
 
     @include mixins.pc {
         display: grid;
-        grid-template-columns: 58% 35%;
+        /*grid-template-columns: 58% 35%;*/
+        grid-template-columns: 47% 46%;
         column-gap: 70px;
         padding-top: 60px;
         padding-bottom: 100px;
@@ -60,14 +56,230 @@
             max-width: 100%;
             grid-column-start: 1;
             grid-row-end: span 2;
-            /*padding-top: 50px;*/
+            margin-top: 50px;
         }
 
         &__text {
             text-align: justify;
             grid-column-start: 2;
         }
+
+        &__content {
+            font-size: 16px;
+            padding-left: 0;
+            padding-top: 0;
+            padding-right: 0;
+        }
         
+    }
+}
+
+.technology-container {
+    background-color: #f5f5f5;
+    color: #292929;
+}
+
+.technology {
+    @include mixins.main-sections;
+
+    &__title {
+        @include mixins.main-title;
+    }
+
+    &__list {
+        @include mixins.technology-badge-position;
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin-top: 70px;
+    }
+
+    &__content1 {
+        position: relative;
+        padding: 20px 0 40px 0;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: colors.$primary-c;
+            width: 110%;
+            height: 2px;
+            left: -15px;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+        }
+    }
+
+    &__content2 {
+        padding: 20px 0 0 0;
+    }
+
+    &__content-title {
+        position: relative;
+        text-align: center;
+        color: colors.$primary-c;
+        font-size: 20px;
+        margin: 16px 0;
+        padding: 20px 20px 20px 20px;
+    }
+
+    &__content-text {
+        text-align: justify;
+        line-height: 1.5; 
+    }
+
+    &__tool, &__item {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        width: 100px;
+        border-radius: 2px 2px 30% 30%;
+        box-shadow: 2px 2px 10px #dadada;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    &__item {
+        align-items: center; 
+        justify-content: center;
+        border-top: 2px solid #ffffff;
+        background: linear-gradient(to right top, rgb(246,225,31), rgb(230,178,0));
+    }
+
+    &__tools {
+        @include mixins.technology-badge-position;
+    }
+
+    &__tool {
+        flex-direction: column;
+        border-top: 2px solid colors.$primary-c; 
+        background-color: #ffffff;
+    }
+
+    &__tool-icon {
+        width: 50%;
+        align-self: center;
+    }
+
+    &__tool-desc {
+        margin: 10px 0 5px 0;
+        text-align: center;
+    }
+
+    @include mixins.tablet { 
+        line-height: 1.75;
+        display: grid;
+        column-gap: 40px;
+        row-gap: 25px;
+
+        &__title {
+            font-size: 25px;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-column-end: span 2;
+        }
+
+        &__content1 {
+            grid-row-start: 2;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            padding: 0 15px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &__content2 {
+            grid-row-start: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            padding: 0 15px;
+        }
+
+        &__content-title {
+            font-size: 25px;
+        }
+
+        &__content-text {
+            font-size: 18px;
+            bottom: 10px;
+        }
+
+        &__list {
+            margin: 40px 0 20px 0;
+            grid-row-start: 3;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            padding: 15px;
+            row-gap: 40px;
+        }
+        
+        &__tools {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            margin: 40px 0 20px 0;
+            padding: 15px;
+            row-gap: 40px;
+        }
+
+        &__tool {
+            margin: 0;
+        }
+
+    }
+
+    @include mixins.pc {
+        padding-top: 60px;
+        padding-bottom: 110px;
+
+        &__content1 {
+            padding: 0 40px;
+        }
+
+        &__content2 {
+            padding: 60px 40px 0 40px;
+        }
+
+        &__content-title {
+            padding-bottom: 30px;
+
+            &::after {
+                bottom: 15px;
+            }
+        }
+
+        &__content-text {
+            font-size: 16px;
+        }
+
+        &__list {
+            padding: 0 40px 0 40px;
+            column-gap: 70px;
+            margin-top: 80px;
+            row-gap: 50px;
+        }
+
+        &__item {
+            text-transform: uppercase;
+            width: 100px;
+            height: 100px;
+            font-size: 11px;
+        }
+     
+        &__tools {
+            padding: 0 40px 0 40px;
+            column-gap: 70px;
+            row-gap: 50px;
+            margin-top: 20px;
+        }
+
+        &__tool-desc {
+            font-size: 11px;
+        }
+
     }
 }
 
@@ -76,39 +288,34 @@
 }
 
 .courses {
-    max-width: 1200px;
-    height: auto;
-    line-height: 1.5;
+    @include mixins.main-sections;
     color: colors.$dark-text-color;
-    margin: 0 auto;
-    padding: 30px 30px 80px 30px;
     
     &__title {
         @include mixins.main-title;
-        padding: 50px 0 30px 0;
     }
 
     &__img {
-        max-width: 100%;
-        /*padding-bottom: 30px;*/
-        /*filter: grayscale(100%);*/
-        border-radius: 2px;
-        opacity: 90%;
-        border: 7px solid #f6c41f;
+        @include mixins.section-img;       
+        margin: 25px 15px;
     }
 
     &__text {
-        border-radius: 15px;
         text-align: center;
-        padding: 10px 20px;    
+        padding-top: 15px;
     }
 
     @include mixins.tablet {
         &__img {
             display: block;
             max-width: 70%;
-            margin: auto;
+            margin: 45px auto 20px auto;
             /*padding-top: 20px;*/
+        }
+
+        &__text {
+            padding-top: 25px;
+            font-size: 18px;
         }
     }
 
@@ -123,7 +330,7 @@
             grid-row-start: 1;
             grid-column-start: 1;
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             padding-left: 20px;
         }
     
@@ -137,229 +344,8 @@
             text-align: left;
             grid-column-start: 1;
             grid-row-start: 2;
-
-        }
-    }
-}
-
-.technology-container {
-    /*background-color: #fafafa;*/
-    background-color: #f5f5f5;
-    color: #292929;
-}
-
-.technology {
-    
-    margin: 0 auto;
-    padding: 30px 30px 80px 30px;
-
-    &__title {
-        @include mixins.main-title;
-        padding: 50px 0 30px 0;
-    }
-
-    &__list {
-        margin: 30px 0 40px 0;
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        text-align: center;
-        padding: 10px 0;
-        row-gap: 20px;
-        justify-content: space-between;
-    }
-
-    &__content-title {
-        position: relative;
-        text-align: center;
-        color: colors.$primary-c;
-        font-size: 20px;
-        margin: 16px 0;
-        padding: 20px 20px 20px 20px;
-
-            &::after {
-                content: '';
-                position: absolute;
-                background-color: colors.$primary-c;
-                width: 95%;
-                height: 2px;
-                left: 0;
-                right: 0;
-                bottom: 5px;
-                margin: 0 auto;
-            }
-    }
-
-    &__content-text {
-        position: relative;
-        padding: 0 20px 25px 20px;
-        font-size: 15px;
-        text-align: justify;
-        line-height: 1.5;
-
-        &::after {
-            content: '';
-            position: absolute;
-            background-color: colors.$primary-c;
-            width: 95%;
-            height: 2px;
-            left: 0;
-            right: 0;
-            bottom: -5px;
-            margin: 0 auto;
-        }
-    }
-
-    &__item {
-        border-radius: 2px 2px 30% 30%;
-        border-top: 2px solid #ffffff;
-        box-shadow: 2px 2px 10px #dadada;
-        height: 100px;
-        width: 100px;
-        background: linear-gradient(to right top, rgb(246,225,31), rgb(230,178,0));
-        font-size: 11px;
-        font-weight: 600; 
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-
-        &--important {
-            /*background: linear-gradient(to right top, rgb(246, 189, 31), rgb(230, 123, 0)); */
-            background: linear-gradient(to right top, rgb(246,225,31), rgb(246,225,31));
-            height: 150px;
-            width: 150px;
-        }
-    }
-
-    &__tools {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:space-between;
-        row-gap: 20px;
-        font-weight: 600;
-        margin-bottom: 25px;
-        padding: 10px 20;
-        margin-top: 50px;
-    }
-
-    &__tool {
-        display: flex;
-        flex-direction: column;
-        font-size: 13px;
-        /*align-self: center;*/
-        background-color: #ffffff;
-        border-radius: 2px 2px 30% 30%;
-        border-top: 2px solid colors.$primary-c;
-        box-shadow: 2px 2px 10px #dadada;
-        height: 100px;
-        width: 100px;
-    }
-
-    &__tool-icon {
-        width: 50%;
-        align-self: center;
-        /*background-color: #ffffff;
-        padding: 20px;
-        border-radius: 2px 2px 30% 30%;
-        border-top: 2px solid colors.$primary-c;
-        box-shadow: 2px 2px 10px #dadada;*/
-    }
-
-    &__tool-desc {
-        margin: 10px 0 5px 0;
-        align-self: center;
-        text-align: center;
-    }
-
-    @include mixins.tablet { 
-        line-height: 1.75;
-        display: grid;
-
-        &__title {
-            font-size: 25px;
-            grid-row-start: 1;
-            grid-column-start: 1;
-            grid-column-end: span 2;
-        }
-
-        &__content {
-            padding: 0;
-            grid-row-start: 2;
-            grid-column-start: 2;
-            grid-column-end: 3;
-        }
-
-        &__content-title {
-            font-size: 25px;
-
-            &::after {
-                bottom: 10px;
-            }
-        }
-
-        &__content-text {
             font-size: 16px;
+            padding-left: 20px;
         }
-
-        &__list {
-            margin: 40px 0 20px 0;
-            grid-row-start: 3;
-            grid-column-start: 2;
-            grid-column-end: 3;
-            padding: 20px;
-            row-gap: 40px;
-        }
-        
-        &__tools {
-            grid-row-start: 2;
-            grid-column-start: 1;
-            grid-column-end: 2;
-            margin: 40px 0 20px 0;
-            padding: 20px;
-            row-gap: 40px;
-        }
-
-        &__tool {
-            margin: 0;
-        }
-
-    }
-
-    @include mixins.pc {
-        max-width: 1200px;
-        padding-top: 60px;
-        padding-bottom: 120px;
-
-        &__content {
-            padding: 0 40px;
-        }
-
-        &__content-title {
-            padding-bottom: 30px;
-
-            &::after {
-                bottom: 15px;
-            }
-        }
-
-        &__list {
-            padding: 40px 60px 0 60px;
-            column-gap: 70px;
-            margin-top: 40px;
-            row-gap: 50px;
-        }
-
-        &__item {
-            text-transform: uppercase;
-            width: 100px;
-            height: 100px;
-        }
-     
-        &__tools {
-            padding: 40px 60px 0 60px;
-            column-gap: 70px;
-            row-gap: 50px;
-        }
-
     }
 }
