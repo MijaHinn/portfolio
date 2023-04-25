@@ -32,6 +32,7 @@
 
     &__img {
         width: 100%;
+        height: auto;
         border-radius: 2px;
     }
 
@@ -136,9 +137,11 @@
             transition: ease-in-out 6s;
             
             &--img1 {
-                background-image: url("../images/portfolio_screen1.png");
+                background-image: url("../images/portfolio_screen1.webp");
                 background-size: cover;
                 border-radius: 2px;
+                width: 100%;
+                height: auto;
             }
 
             &:hover {

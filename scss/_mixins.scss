@@ -46,7 +46,8 @@
 }
 
 @mixin section-img {
-    max-width: 90%;
+    width: 90%;
+    height: auto;
     border: 7px solid #f6c41f;
     border-radius: 2px;
     opacity: 90%;
