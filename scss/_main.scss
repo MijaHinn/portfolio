@@ -28,7 +28,8 @@
     @include mixins.tablet {
         &__img {
             display: block;
-            max-width: 70%;
+            width: 70%;
+            height: auto;
             margin: 40px auto 20px auto;
         }
 
