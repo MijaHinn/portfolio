@@ -5,6 +5,7 @@
     font-size: 36px;
     margin: 0;
     padding: 0;
+    font-weight: 900;
 
     &__link {
         color: colors.$text-color;
@@ -19,5 +20,6 @@
         font-size: 80px;
         margin: 0;
         opacity: 0.6;
+        font-weight: 900;
     }
 }
