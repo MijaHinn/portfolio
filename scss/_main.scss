@@ -53,7 +53,8 @@
         }
 
         &__img {
-            max-width: 100%;
+            width: 100%;
+            height: auto;
             grid-column-start: 1;
             grid-row-end: span 2;
             margin-top: 60px;
@@ -309,7 +310,8 @@
     @include mixins.tablet {
         &__img {
             display: block;
-            max-width: 70%;
+            width: 70%;        
+            height: auto;
             margin: 45px auto 20px auto;
             /*padding-top: 20px;*/
         }
@@ -336,7 +338,8 @@
         }
     
         &__img {
-            max-width: 90%;
+            width: 90%;
+            height: auto;
             grid-column-start: 2;
             grid-row-end: span 2;
         }
