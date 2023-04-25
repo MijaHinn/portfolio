@@ -494,7 +494,8 @@ p {
   padding: 50px 0 30px 0;
 }
 .about__img {
-  max-width: 90%;
+  width: 90%;
+  height: auto;
   border: 7px solid #f6c41f;
   border-radius: 2px;
   opacity: 90%;
@@ -508,7 +509,8 @@ p {
 @media screen and (min-width: 520px) {
   .about__img {
     display: block;
-    max-width: 70%;
+    width: 70%;
+    height: auto;
     margin: 40px auto 20px auto;
   }
   .about__content {
@@ -532,13 +534,13 @@ p {
     text-align: left;
   }
   .about__img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     grid-column-start: 1;
     grid-row-end: span 2;
     margin-top: 60px;
   }
   .about__text {
-    text-align: justify;
     grid-column-start: 2;
   }
   .about__content {
@@ -767,7 +769,8 @@ p {
   padding: 50px 0 30px 0;
 }
 .courses__img {
-  max-width: 90%;
+  width: 90%;
+  height: auto;
   border: 7px solid #f6c41f;
   border-radius: 2px;
   opacity: 90%;
@@ -781,7 +784,8 @@ p {
 @media screen and (min-width: 520px) {
   .courses__img {
     display: block;
-    max-width: 70%;
+    width: 70%;
+    height: auto;
     margin: 45px auto 20px auto;
     /*padding-top: 20px;*/
   }
@@ -807,7 +811,8 @@ p {
     padding-left: 20px;
   }
   .courses__img {
-    max-width: 90%;
+    width: 90%;
+    height: auto;
     grid-column-start: 2;
     grid-row-end: span 2;
   }
@@ -1064,6 +1069,7 @@ p {
 }
 .projects__img {
   width: 100%;
+  height: auto;
   border-radius: 2px;
 }
 .projects__text {
@@ -1153,9 +1159,11 @@ p {
     transition: ease-in-out 6s;
   }
   .projects__scroll-img--img1 {
-    background-image: url("../images/portfolio_screen1.png");
+    background-image: url("../images/portfolio_screen1.webp");
     background-size: cover;
     border-radius: 2px;
+    width: 100%;
+    height: auto;
   }
   .projects__scroll-img:hover {
     background-position: bottom;
