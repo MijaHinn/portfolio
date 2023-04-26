@@ -74,7 +74,6 @@
         }
 
         &__img {
-            /*grid-column: <start-line> / <end-line> | <start-line> / span <value>;*/
             grid-column: 1 / 2;
             grid-row: 2 / 3;
             margin-top: 15px;
@@ -134,7 +133,7 @@
             transition: ease-in-out 6s;
             
             &--img1 {
-                background-image: url("../images/portfolio_screen1.webp");
+                background-image: url("../images/portfolio_screen1.png");
                 background-size: cover;
                 border-radius: 2px;
             }
