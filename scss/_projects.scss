@@ -1,4 +1,3 @@
-
 @use "root";
 @use "colors";
 @use "mixins";
@@ -138,7 +137,6 @@
                 background-image: url("../images/portfolio_screen1.webp");
                 background-size: cover;
                 border-radius: 2px;
-                width: 100%;
             }
 
             &:hover {
