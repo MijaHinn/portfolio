@@ -1069,7 +1069,6 @@ p {
 }
 .projects__img {
   width: 100%;
-  height: auto;
   border-radius: 2px;
 }
 .projects__text {
