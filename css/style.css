@@ -7,6 +7,7 @@
 /* --- DARK BUTTON -- */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, :after, :before {
