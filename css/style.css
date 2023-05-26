@@ -34,6 +34,10 @@ p {
   text-align: center;
 }
 
+:focus {
+  outline: none;
+}
+
 /*.dark-lines {
     display: flex;
     justify-content: center;
@@ -268,14 +272,14 @@ p {
   .menu__link--underline:hover {
     color: #ffffff;
   }
-  .menu__link--underline:hover:after {
+  .menu__link--underline:hover:after, .menu__link--underline:focus:after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
   .menu__link--active::after {
     width: 0%;
   }
-  .menu__link--active:hover:not(.active) {
+  .menu__link--active:hover:not(.active), .menu__link--active:focus:not(.active) {
     color: #ffc918;
   }
   .button-contact {

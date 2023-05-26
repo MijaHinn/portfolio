@@ -24,6 +24,10 @@ p {
     text-align: center;
 }
 
+:focus {
+    outline: none;
+}
+
 /*.dark-lines {
     display: flex;
     justify-content: center;

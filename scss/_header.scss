@@ -209,7 +209,8 @@
                 color: #ffffff;
             }
     
-            &--underline:hover:after {
+            &--underline:hover:after,
+            &--underline:focus:after {
                 transform: scaleX(1);
                 transform-origin: bottom left;
             }
@@ -218,7 +219,8 @@
                 width: 0%;
             }
 
-            &--active:hover:not(.active) {
+            &--active:hover:not(.active),
+            &--active:focus:not(.active) {
                 color: #ffc918; 
             }
         }
